@@ -1,0 +1,59 @@
+//
+//  XPYReader.pch
+//  XPYReader
+//
+//  Created by zhangdu_imac on 2020/8/3.
+//  Copyright © 2020 xiang. All rights reserved.
+//
+
+#ifndef XPYReader_pch
+#define XPYReader_pch
+
+#import "XPYMacros.h"
+#import "XPYUtilitiesDefine.h"
+#import "XPYReadConfigDefines.h"
+
+#import <Masonry.h>
+#import <UINavigationController+FDFullscreenPopGesture.h>
+#import <SDWebImage.h>
+#import <XPYAlertManager.h>
+#import <MBProgressHUD+XPYExtension.h>
+
+
+// 判断是否是刘海屏系列
+#define iPhoneBangs \
+({BOOL iPhoneBangs = NO;\
+if (@available(iOS 11.0, *)) {\
+iPhoneBangs = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(iPhoneBangs);})
+
+#define XPYStatusBarHeight \
+({CGFloat XPYStatusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;\
+if (XPYStatusBarHeight == 0) {\
+if (iPhoneBangs) {\
+XPYStatusBarHeight = 44.0f;\
+}else{\
+XPYStatusBarHeight = 20.0f;\
+}\
+}\
+(XPYStatusBarHeight);})
+
+
+#define iPhone5                 (XPYScreenHeight == 568.0)
+
+#define iPhone6                 (XPYScreenHeight == 667.0)
+
+#define iPhonePlus              (XPYScreenHeight == 736.0)
+
+#define XPYNavBarHeight          44.0f
+
+#define XPYTopHeight             (XPYStatusBarHeight + XPYNavBarHeight)
+
+#define XPYTabBarHeight          (iPhoneBangs ? 78.0f : 49.0f)
+
+#define XPYHomeIndicatorHeight   (iPhoneBangs ? 34.f : 0.f)
+
+#define XPYBottomHeight          (iPhoneBangs ? 30.f : 0.f)
+
+#endif /* XPYReader_pch */

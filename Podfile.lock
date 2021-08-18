@@ -1,0 +1,97 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - FDFullscreenPopGesture (1.1)
+  - KVOController (1.2.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MQTTClient (0.15.3):
+    - MQTTClient/Core (= 0.15.3)
+  - MQTTClient/Core (0.15.3):
+    - MQTTClient/Manager
+    - MQTTClient/Min
+  - MQTTClient/Manager (0.15.3):
+    - MQTTClient/Min
+  - MQTTClient/Min (0.15.3)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDB (1.0.7.5):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
+  - XPYKit (1.0.6):
+    - MBProgressHUD
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Aspects
+  - FDFullscreenPopGesture
+  - KVOController
+  - Masonry
+  - MBProgressHUD
+  - MQTTClient
+  - SDWebImage (~> 5.6.0)
+  - WCDB
+  - XPYKit (from `https://github.com/xiangxiaopenyou/XPYKit.git`)
+  - YYModel
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Aspects
+    - FDFullscreenPopGesture
+    - KVOController
+    - Masonry
+    - MBProgressHUD
+    - MQTTClient
+    - SDWebImage
+    - SQLiteRepairKit
+    - WCDB
+    - WCDBOptimizedSQLCipher
+    - YYModel
+
+EXTERNAL SOURCES:
+  XPYKit:
+    :git: https://github.com/xiangxiaopenyou/XPYKit.git
+
+CHECKOUT OPTIONS:
+  XPYKit:
+    :commit: a89d6010c85f3ea5e5631961b98056e4a3ec8a35
+    :git: https://github.com/xiangxiaopenyou/XPYKit.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
+  XPYKit: 5f9e8fa0088bedecfe594f44efd04de5afbddb6f
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: b05ba40b0d6c2cf9eff69768c339b4c63960c9ef
+
+COCOAPODS: 1.10.1
