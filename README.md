@@ -14,7 +14,8 @@ iOS 9.0+
 
 ## 截图
 <img width="267" alt="111111" src="https://user-images.githubusercontent.com/15797691/129843014-d7bd34b8-12ad-4013-9716-fcdbed194070.png">
-![2222](https://user-images.githubusercontent.com/15797691/129843028-3f14a8f3-47e5-4f31-81ad-feadf74a45f5.png)
+<img width="267" alt="2222" src="https://user-images.githubusercontent.com/15797691/129843028-3f14a8f3-47e5-4f31-81ad-feadf74a45f5.png">
+
 
 
 
