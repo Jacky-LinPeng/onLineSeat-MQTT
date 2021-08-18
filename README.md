@@ -14,9 +14,11 @@ iOS 9.0+
 
 ## 截图
 
-<img width="240" alt="WX20210818-103319@2x" src="https://user-images.githubusercontent.com/15797691/129829267-12f6fb62-2389-4caa-b0d0-558afe291d8e.png">
+<img width="267" alt="111111" src="https://user-images.githubusercontent.com/15797691/129842544-5aeffb72-9dae-4b98-a059-93e99cd6aef0.png">
 
-<img width="240" alt="1WX20210818-103319@2x" src="https://user-images.githubusercontent.com/15797691/129829460-18a5c574-fc12-42fc-a5ce-49c9b645a160.png">
+
+<img width="267" alt="111111" src="https://user-images.githubusercontent.com/15797691/129842614-28c39417-935b-4bdc-8be5-9fa5f2866b31.png">
+
 
 
 
