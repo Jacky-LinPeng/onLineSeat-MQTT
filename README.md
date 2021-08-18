@@ -15,8 +15,11 @@ iOS 9.0+
 ## 截图
 
 <img width="240" alt="WX20210818-103319@2x" src="https://user-images.githubusercontent.com/15797691/129829267-12f6fb62-2389-4caa-b0d0-558afe291d8e.png">
-![WechatIMG28](https://user-images.githubusercontent.com/15797691/129829274-489d6a4d-10a5-433d-82ee-82150e60c20e.png)
 
-![WechatIMG28](https://user-images.githubusercontent.com/15797691/129829313-bd1f0995-cf06-4655-9e1a-9810a06e3c37.png)
+<img width="240" alt="1WX20210818-103319@2x" src="https://user-images.githubusercontent.com/15797691/129829460-18a5c574-fc12-42fc-a5ce-49c9b645a160.png">
+
+
+
+
 
 
