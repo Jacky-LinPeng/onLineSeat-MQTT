@@ -37,7 +37,24 @@
 }
 
 - (void)setupUI {
-    CGFloat offset = 100;
+    CGFloat offset = iPhoneBangs ? 80 : 64;
+    //屏幕
+    UILabel *iMaxView = [UILabel new];
+    iMaxView.text = @"IMAX荧幕";
+    iMaxView.font = [UIFont systemFontOfSize:13];
+    iMaxView.textColor = [UIColor whiteColor];
+    iMaxView.textAlignment = NSTextAlignmentCenter;
+    iMaxView.backgroundColor = [UIColor colorWithHex:0xd58783];
+    [self.view addSubview:iMaxView];
+    [iMaxView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.top.equalTo(@(offset + 10));
+        make.height.equalTo(@(30));
+    }];
+    
+    offset += 50;
+    
+    //位置
     CGFloat margin = 10;
     int row = 6;
     int cloum = 6;
@@ -51,7 +68,6 @@
             //位置
             UIButton *btn = [UIButton new];
             [btn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
-            btn.backgroundColor = [UIColor grayColor];
             [self.view addSubview:btn];
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.height.equalTo(@(width));
@@ -68,8 +84,85 @@
             
             [btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xd5e6ca]] forState:UIControlStateNormal];
             [btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xd58783]] forState:UIControlStateSelected];
+            [btn setBackgroundImage:[UIImage imageWithColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]] forState:UIControlStateDisabled];
+            
+            btn.enabled = !(btn.tag == 15 || btn.tag == 16 || btn.tag == 23);
         }
     }
+    
+    offset += cloum * (width + margin) + 15;
+    
+    //底部
+    {
+        NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:3];
+        for (int i = 0; i < 3; i++) {
+            UIButton *btn = [UIButton new];
+            [self.view addSubview:btn];
+            btn.layer.cornerRadius = 5;
+            btn.layer.masksToBounds = YES;
+            
+            [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+//            [btn setImage:[UIImage imageNamed:@"suo"] forState:UIControlStateSelected];
+            
+            [btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xd5e6ca]] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xd58783]] forState:UIControlStateSelected];
+            [btn setBackgroundImage:[UIImage imageWithColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]] forState:UIControlStateDisabled];
+          
+            btn.selected = i == 0;
+            btn.enabled = i != 2;
+            
+//            [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, 0)];
+            btn.titleLabel.font = [UIFont systemFontOfSize:13];
+            
+            [btn setTitle:@"可选 " forState:UIControlStateNormal];
+            [btn setTitle:@"已选 " forState:UIControlStateSelected];
+            [btn setTitle:@"不可售" forState:UIControlStateDisabled];
+            
+            [arr addObject:btn];
+        }
+        [arr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:60 leadSpacing:80 tailSpacing:80];
+        // 设置array的垂直方向的约束
+        [arr mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@(offset));
+            make.height.equalTo(@30);
+            make.width.equalTo(@60);
+        }];
+    }
+    
+    //电影名字
+    {
+        UILabel *iMaxView = [UILabel new];
+        iMaxView.text = @"怒火 * 重案【国语 - 今日20:00】";
+        iMaxView.font = [UIFont boldSystemFontOfSize:16];
+//        iMaxView.textColor = [UIColor whiteColor];
+////        iMaxView.textAlignment = NSTextAlignmentCenter;
+//        iMaxView.backgroundColor = [UIColor colorWithHex:0xd58783];
+        [self.view addSubview:iMaxView];
+        [iMaxView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@10);
+            make.bottom.equalTo(@(-55));
+            make.height.equalTo(@(30));
+        }];
+    }
+    //购买
+    {
+        //位置
+        UIButton *btn = [UIButton new];
+        [self.view addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(44));
+            make.bottom.equalTo(@(0));
+            make.left.equalTo(@(15));
+            make.right.equalTo(@(-15));
+        }];
+        btn.layer.cornerRadius = 15;
+        btn.layer.masksToBounds = YES;
+        
+        [btn setTitle:@"购买" forState:UIControlStateNormal];
+        
+        [btn setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xd58783]] forState:UIControlStateNormal];
+    }
+    
 }
 
 -(void)clickAction:(UIButton *)sender {

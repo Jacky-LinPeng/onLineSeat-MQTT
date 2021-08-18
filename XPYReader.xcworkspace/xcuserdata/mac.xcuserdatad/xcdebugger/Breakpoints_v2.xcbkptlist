@@ -110,8 +110,8 @@
             filePath = "XPYReader/Module/OnLineSeat/XPYSeatVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-didReciveMessage:topicId:"
             landmarkType = "7">
             <Locations>
