@@ -13,6 +13,7 @@
 		0488559D26CC9FA100031624 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488559C26CC9FA100031624 /* UIImage+Extension.m */; };
 		048855A226CCA05600031624 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 048855A026CCA05600031624 /* UIColor+Extension.m */; };
 		048855A326CCA05600031624 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 048855A126CCA05600031624 /* UIView+Extension.m */; };
+		04B820A826CF9368009CBA63 /* XYPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B820A726CF9368009CBA63 /* XYPButton.m */; };
 		04D26A8126C94EDB00469965 /* ZTQLiveMsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D26A7D26C94EDB00469965 /* ZTQLiveMsgModel.m */; };
 		04D26A8226C94EDB00469965 /* ZTQLiveMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D26A7E26C94EDB00469965 /* ZTQLiveMsgView.m */; };
 		04D26A8326C94EDB00469965 /* ZTQLiveMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D26A7F26C94EDB00469965 /* ZTQLiveMsgCell.m */; };
@@ -104,6 +105,8 @@
 		0488559F26CCA05600031624 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		048855A026CCA05600031624 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		048855A126CCA05600031624 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		04B820A626CF9368009CBA63 /* XYPButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYPButton.h; sourceTree = "<group>"; };
+		04B820A726CF9368009CBA63 /* XYPButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYPButton.m; sourceTree = "<group>"; };
 		04D26A7A26C94EDB00469965 /* ZTQLiveMsgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTQLiveMsgModel.h; sourceTree = "<group>"; };
 		04D26A7B26C94EDB00469965 /* ZTQLiveMsgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTQLiveMsgView.h; sourceTree = "<group>"; };
 		04D26A7C26C94EDB00469965 /* ZTQLiveMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTQLiveMsgCell.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 			children = (
 				0488559826CBDD5300031624 /* XPYSeatVC.h */,
 				0488559926CBDD5300031624 /* XPYSeatVC.m */,
+				04B820A626CF9368009CBA63 /* XYPButton.h */,
+				04B820A726CF9368009CBA63 /* XYPButton.m */,
 			);
 			path = OnLineSeat;
 			sourceTree = "<group>";
@@ -941,6 +946,7 @@
 				6CCDDC9124EBD28100612B7B /* XPYPageReadViewController.m in Sources */,
 				6C7BA8C024D7FEAC0054B971 /* XPYNetworkManager.m in Sources */,
 				0488559D26CC9FA100031624 /* UIImage+Extension.m in Sources */,
+				04B820A826CF9368009CBA63 /* XYPButton.m in Sources */,
 				6C4F71162542BEC500FC3699 /* XPYTransitionManager.m in Sources */,
 				043C626E26C2A28C003C5140 /* BaseManager.m in Sources */,
 				6C033EC724F3C06E002B86A3 /* XPYBaseReadViewController.m in Sources */,

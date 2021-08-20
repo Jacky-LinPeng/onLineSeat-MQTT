@@ -38,6 +38,9 @@ target 'XPYReader' do
   # 环信MQTT
   pod 'MQTTClient'
   
+  #tagView
+  pod "TTGTagCollectionView"
+  
   # 消除版本警告
   post_install do |installer|
     installer.pods_project.targets.each do |target|

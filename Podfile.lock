@@ -32,6 +32,7 @@ PODS:
   - SDWebImage/Core (5.6.1)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - TTGTagCollectionView (2.1.0)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MQTTClient
   - SDWebImage (~> 5.6.0)
+  - TTGTagCollectionView
   - WCDB
   - XPYKit (from `https://github.com/xiangxiaopenyou/XPYKit.git`)
   - YYModel
@@ -64,6 +66,7 @@ SPEC REPOS:
     - MQTTClient
     - SDWebImage
     - SQLiteRepairKit
+    - TTGTagCollectionView
     - WCDB
     - WCDBOptimizedSQLCipher
     - YYModel
@@ -87,11 +90,12 @@ SPEC CHECKSUMS:
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  TTGTagCollectionView: a2a8668c659b39e7a6ffd6590475ea53a7ae95f7
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   XPYKit: 5f9e8fa0088bedecfe594f44efd04de5afbddb6f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: b05ba40b0d6c2cf9eff69768c339b4c63960c9ef
+PODFILE CHECKSUM: 3e0c28a618fb37827c884e9a73df7f26a05d676c
 
 COCOAPODS: 1.10.1

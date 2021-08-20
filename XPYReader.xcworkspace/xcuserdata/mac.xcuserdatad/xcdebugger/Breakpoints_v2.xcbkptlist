@@ -103,49 +103,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F470DABE-8561-4116-9F3E-60858E8E79D0"
+            uuid = "D31343F3-A80A-448C-B946-9E5993DCFD9B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XPYReader/Module/OnLineSeat/XPYSeatVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "-didReciveMessage:topicId:"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "-clickAction:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F470DABE-8561-4116-9F3E-60858E8E79D0 - d88ac42781eec361"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XPYSeatVC didReciveMessage:topicId:]"
-                  moduleName = "XPYReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/XPYReader-master/XPYReader/Module/OnLineSeat/XPYSeatVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "217">
-               </Location>
-               <Location
-                  uuid = "F470DABE-8561-4116-9F3E-60858E8E79D0 - d88ac42781eec361"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XPYSeatVC didReciveMessage:topicId:]"
-                  moduleName = "XPYReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/XPYReader-master/XPYReader/Module/OnLineSeat/XPYSeatVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "237">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56069838-0B9F-4FC4-8596-CE9921A71FBE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XPYReader/Module/OnLineSeat/XPYSeatVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-clickAction:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
