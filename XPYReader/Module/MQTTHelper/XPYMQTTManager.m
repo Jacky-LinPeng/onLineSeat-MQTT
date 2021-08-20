@@ -243,17 +243,19 @@
  * MQTTSessionManagerDelegate
  */
 - (void)handleMessage:(NSData *)data onTopic:(NSString *)topic retained:(BOOL)retained {
-    NSArray *subTopics = [topic componentsSeparatedByString:@"/"];
-    NSString *topicId = subTopics.firstObject;
-    NSString *dataJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];;
-    
-    if ([topicId isEqualToString:kHXMQTTTxtTopic]) {
-        [self notifyObserversWithSelector:@selector(didReciveMessage:topicId:) withObjectOne:dataDict objectTwo:subTopics.lastObject];
-    } else if ([topicId isEqualToString:kHXMQTTOPTopic]) {
-        [self notifyObserversWithSelector:@selector(didRecivePageChangedWithOrignal:topicId:) withObjectOne:dataDict objectTwo:subTopics.lastObject];
-    }
-    NSLog(@"rec:%@",dataJson);
+    dispatch_async(dispatch_get_main_queue(), ^{    
+        NSArray *subTopics = [topic componentsSeparatedByString:@"/"];
+        NSString *topicId = subTopics.firstObject;
+        NSString *dataJson = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];;
+        
+        if ([topicId isEqualToString:kHXMQTTTxtTopic]) {
+            [self notifyObserversWithSelector:@selector(didReciveMessage:topicId:) withObjectOne:dataDict objectTwo:subTopics.lastObject];
+        } else if ([topicId isEqualToString:kHXMQTTOPTopic]) {
+            [self notifyObserversWithSelector:@selector(didRecivePageChangedWithOrignal:topicId:) withObjectOne:dataDict objectTwo:subTopics.lastObject];
+        }
+        NSLog(@"rec:%@",dataJson);
+    });
 }
 
 -(void)messageDelivered:(UInt16)msgID {

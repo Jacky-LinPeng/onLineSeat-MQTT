@@ -14,6 +14,7 @@
 #import "XYPButton.h"
 #import <TTGTagCollectionView/TTGTextTagCollectionView.h>
 
+
 #define kXPYSeatTopic       @"kXPYSeatTopic"
 #define kTicket             65
 #define kRowCount       6
@@ -26,7 +27,10 @@
 }
 @property (nonatomic, strong) TTGTextTagCollectionView *tagView;
 @property (nonatomic, strong) NSMutableArray *mySelectList;
+@property (nonatomic ,strong)dispatch_source_t timer;
+
 @end
+
 
 @implementation XPYSeatVC
 
@@ -36,19 +40,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"在线选座";
+
     [self setupUI];
+    [self addObserver];
     
-    [[XPYMQTTManager sharedInstance] addObserver:self];
-    
-    [[XPYMQTTManager sharedInstance] addSubscribeWithTopic:kXPYSeatTopic];
-    
-    // 添加检测app进入后台
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnterBackground) name: UIApplicationWillResignActiveNotification object:nil];
+//    [self startHeartbeat];
 }
 
 - (void)setupUI {
+    self.title = @"在线选座";
+    
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:scrollView];
     
@@ -212,8 +213,33 @@
     offset += 160;
 }
 
+-(void)addObserver {
+    [[XPYMQTTManager sharedInstance] addObserver:self];
+    [[XPYMQTTManager sharedInstance] addSubscribeWithTopic:kXPYSeatTopic];
+    
+    // 添加检测app进入后台
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnterBackground) name: UIApplicationWillResignActiveNotification object:nil];
+}
+
+-(void)startHeartbeat {
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(timer, ^{
+        [self heartBeat];
+    });
+    dispatch_resume(timer);
+
+    self.timer = timer;
+}
+
+//MARK: action
 -(void)buyAction:(UIButton *)sender {
-    [MBProgressHUD xpy_showTips:@"购买成功！"];
+    if (self.mySelectList.count > 0) {
+        [MBProgressHUD xpy_showTips:@"购买成功！"];
+    } else {
+        [MBProgressHUD xpy_showTips:@"请先选择座位"];
+    }
 }
 
 -(void)clickAction:(XYPButton *)sender {
@@ -233,23 +259,17 @@
         }
     }
     
-    NSMutableArray *selectList = [[NSMutableArray alloc] init];
-    for (XYPButton *btn in contentView.subviews) {
-        if ([btn isKindOfClass:[XYPButton class]] && btn.isSelected && btn.tag > 0) {
-            [selectList addObject:@{@"tag": @(btn.tag),@"sender": btn.owner ? btn.owner : deviceID}];
-        }
-    }
+    [sender setImage:[UIImage imageNamed:@"my"] forState:UIControlStateSelected];
+
     
-    [[XPYMQTTManager sharedInstance] sendTxtMessage:@{@"data": selectList,@"sender":deviceID} topicId:kXPYSeatTopic];
+    //同步
+    [self syncMessage];
     
     //已选tag更新
     [self addTagViewWithText:self.mySelectList];
-    //按钮刷新
-    NSString *title = @"购买";
-    if (selectList.count > 0) {
-        title = [NSString stringWithFormat:@"￥%ld确认选座",kTicket * selectList.count];
-    }
-    [payBtn setTitle:title forState:UIControlStateNormal];
+    
+    //购买UI
+    [self updateBuyUI];
 }
 
 -(void)addTagViewWithText:(NSArray *)list {
@@ -291,7 +311,7 @@
         int temp = [value intValue];
         int row = temp / kRowCount + 1;
         int clo = temp % kRowCount;
-        NSString *string = [NSString stringWithFormat:@" %d排%d座(￥%d) ",row,clo,kTicket];
+        NSString *string = [NSString stringWithFormat:@" %d排%d座、(￥%d) ",row,clo,kTicket];
         TTGTextTagStringContent *stringContent = [content copy];
         TTGTextTagStringContent *selectedStringContent = [selectedContent copy];
         stringContent.text = string;
@@ -313,6 +333,15 @@
         }];
         [self.view layoutIfNeeded];
     }];
+}
+
+-(void)updateBuyUI {
+    //按钮刷新
+    NSString *title = @"购买";
+    if (self.mySelectList.count > 0) {
+        title = [NSString stringWithFormat:@"￥%ld确认选座",kTicket * self.mySelectList.count];
+    }
+    [payBtn setTitle:title forState:UIControlStateNormal];
 }
 
 //MARK: MQTT proxy
@@ -342,6 +371,8 @@
         if ([btn isKindOfClass:[XYPButton class]]) {
             btn.selected = YES;
             btn.owner = owner;
+            BOOL isMy = [owner isEqualToString:deviceID];
+            [btn setImage:[UIImage imageNamed:isMy ? @"my" : @"suo"] forState:UIControlStateSelected];
         }
     }
 }
@@ -356,6 +387,27 @@
     }
     [self.mySelectList removeAllObjects];
     [self addTagViewWithText:nil];
+    //同步
+    [self syncMessage];
+    
+    //购买UI
+    [self updateBuyUI];
+}
+
+-(void)syncMessage {
+    [self heartBeat];
+}
+
+//心跳
+-(void)heartBeat {
+    NSString *deviceID = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    NSMutableArray *selectList = [[NSMutableArray alloc] init];
+    for (XYPButton *btn in contentView.subviews) {
+        if ([btn isKindOfClass:[XYPButton class]] && btn.isSelected && btn.tag > 0) {
+            [selectList addObject:@{@"tag": @(btn.tag),@"sender": btn.owner ? btn.owner : deviceID}];
+        }
+    }
+    [[XPYMQTTManager sharedInstance] sendTxtMessage:@{@"data": selectList,@"sender":deviceID} topicId:kXPYSeatTopic];
 }
 
 /*

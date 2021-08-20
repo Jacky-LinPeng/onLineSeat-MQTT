@@ -103,32 +103,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D31343F3-A80A-448C-B946-9E5993DCFD9B"
+            uuid = "2A88DEC9-AED9-4561-9622-581B478348D3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XPYReader/Module/OnLineSeat/XPYSeatVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "-clickAction:"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
+            landmarkName = "-applicationEnterBackground"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2A88DEC9-AED9-4561-9622-581B478348D3 - c2120deb23da61c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[XPYSeatVC applicationEnterBackground]"
+                  moduleName = "XPYReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/xunlei/FORK/onLineSeat-MQTT/XPYReader/Module/OnLineSeat/XPYSeatVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  uuid = "2A88DEC9-AED9-4561-9622-581B478348D3 - c2120deb23da61c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[XPYSeatVC applicationEnterBackground]"
+                  moduleName = "XPYReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/xunlei/FORK/onLineSeat-MQTT/XPYReader/Module/OnLineSeat/XPYSeatVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "63">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C5A6839-CE5D-48D2-8B28-DB4639C0E7D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XPYReader/Module/OnLineSeat/XPYSeatVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
+            landmarkName = "-heartBeat"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "56069838-0B9F-4FC4-8596-CE9921A71FBE"
+            uuid = "122ED699-19CF-40C6-9FEB-C8AB94C61712"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XPYReader/Module/OnLineSeat/XPYSeatVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "-clickAction:"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "-didReciveMessage:topicId:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55640A96-E294-4AA1-AB10-D0AF016ABC8F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XPYReader/Module/MQTTHelper/XPYMQTTManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "-handleMessage:onTopic:retained:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "430C7FAF-2FA3-4491-A7E1-18B75F9F0BF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XPYReader/Module/MQTTHelper/XPYMQTTManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-sendTxtMessage:topicId:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
