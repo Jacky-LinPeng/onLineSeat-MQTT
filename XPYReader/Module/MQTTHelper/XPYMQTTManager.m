@@ -11,7 +11,14 @@
 #import <MQTTClient/MQTTClient.h>
 #import <MQTTClient/MQTTSessionManager.h>
 
-#define getToken_url        @"https://a1.easemob.com/540933120/look/token"
+//TODO: 以下三个需要自行到环信后台获取对应信息
+//开发者后台：https://console.easemob.com/app/generalizeMsg/overviewService
+
+#define getToken_url        @""
+#define kMQTTAppId          @""
+#define kMQTTHost           @""
+
+#define kMQTTPort           1883
 
 //区别消息还是操作类型的消息指令
 #define kHXMQTTTxtTopic     @"kHXMQTTTxtTopic"
@@ -78,9 +85,9 @@
 //MARK: private method
 
 - (void)loadConfiguation {
-    self.appId = @"u5hji0";
-    self.host = @"u5hji0.cn1.mqtt.chat";
-    self.port = 1883;
+    self.appId = kMQTTAppId;
+    self.host = kMQTTHost;
+    self.port = kMQTTPort;
     self.qos = 0;
     self.tls = 0;
     
